@@ -26,7 +26,7 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toast.makeText(mContext, "Test", Toast.LENGTH_LONG).show();
+        Toast.makeText(mContext, "Main Activity", Toast.LENGTH_SHORT).show();
 
         changeTab(TEST_TAB);
     }

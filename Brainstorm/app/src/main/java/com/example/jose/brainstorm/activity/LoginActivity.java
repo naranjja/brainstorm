@@ -2,7 +2,9 @@ package com.example.jose.brainstorm.activity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.jose.brainstorm.R;
 
@@ -21,6 +23,23 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        findViewById(R.id.bLogin).setOnClickListener(new LoginClickListener());
+    }
+
+    private void launchMainActivity() {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private class LoginClickListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            launchMainActivity();
+        }
+
     }
 
 }
