@@ -33,11 +33,22 @@ public class LoginActivity extends Activity {
         finish();
     }
 
+    private void launchValidationActivity() {
+        Intent intent = new Intent(LoginActivity.this, ValidationActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private class LoginClickListener implements View.OnClickListener {
 
         @Override
         public void onClick(View v) {
-            launchMainActivity();
+
+            // if the user has not already been validated
+            launchValidationActivity();
+
+            // if the user has already been validated
+            // launchMainActivity();
         }
 
     }

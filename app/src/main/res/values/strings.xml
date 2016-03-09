@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Brainstorm</string>
+
+    <!-- SplashActivity -->
     <string name="splash">Splash</string>
+
+    <!-- LoginActivity -->
+    <string name="google_login">Inicia sesión con Google</string>
+
+    <!-- ValidationActivity -->
+    <string name="enter_student_id">Ingresa tu código de alumno</string>
+    <string name="validate">Validar</string>
+
 </resources>

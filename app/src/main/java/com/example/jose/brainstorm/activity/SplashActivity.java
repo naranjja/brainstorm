@@ -43,11 +43,22 @@ public class SplashActivity extends Activity {
         finish();
     }
 
+    private void launchMainActivity() {
+        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private class SplashClickListener implements View.OnClickListener {
 
         @Override
         public void onClick(View v) {
+
+            // if the user has not logged in yet
             launchLoginActivity();
+
+            // if the user has already logged in
+            // launchMainActivity();
         }
 
     }

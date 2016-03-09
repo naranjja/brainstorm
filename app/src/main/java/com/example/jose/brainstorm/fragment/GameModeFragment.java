@@ -14,7 +14,7 @@ import com.example.jose.brainstorm.R;
  * Created by Jose on 3/8/2016.
  */
 
-public class TestFragment extends Fragment {
+public class GameModeFragment extends Fragment {
 
     private Context mContext;
     private View view;
@@ -24,7 +24,7 @@ public class TestFragment extends Fragment {
 
         mContext = getActivity();
 
-        view = inflater.inflate(R.layout.fragment_test, null);
+        view = inflater.inflate(R.layout.fragment_game_mode, null);
 
         return view;
 
