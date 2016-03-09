@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.widget.Toast;
 
 import com.example.jose.brainstorm.R;
 import com.example.jose.brainstorm.fragment.TestFragment;
@@ -15,18 +14,15 @@ import java.util.HashMap;
 
 public class MainActivity extends FragmentActivity {
 
+    private static final String TEST_TAB = "Test";
     private Context mContext = this;
     private HashMap<String, Fragment> mFragmentTabs = new HashMap<>();
     private Fragment mCurrentFragment;
-
-    private static final String TEST_TAB = "Test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Toast.makeText(mContext, "Main Activity", Toast.LENGTH_SHORT).show();
 
         changeTab(TEST_TAB);
     }
@@ -38,18 +34,18 @@ public class MainActivity extends FragmentActivity {
         FragmentTransaction ft = fm.beginTransaction();
 
         if (mCurrentFragment == null) {
+
             if (newFragment == null) {
                 newFragment = Fragment.instantiate(this, getFragmentClassName(tabId));
                 mFragmentTabs.put(tabId, newFragment);
                 ft.add(R.id.tabs_content_layout, newFragment, tabId);
-            } else {
 
-                ft.attach(newFragment);
-            }
+            } else ft.attach(newFragment);
 
             mCurrentFragment = newFragment;
 
         } else {
+
             if (mCurrentFragment != newFragment) {
                 ft.detach(mCurrentFragment);
 
